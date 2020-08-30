@@ -53,8 +53,10 @@ registerBtn.addEventListener("click", () => {
       if (data == 1) {
         document.getElementById("error2").innerText =
           "Username or email already in use!";
-      } else {
+      } else if (data == 0) {
         document.getElementById("error2").innerText = "User created!";
+      } else {
+        document.getElementById("error2").innerText = "Unknown error.";
       }
       return;
     });

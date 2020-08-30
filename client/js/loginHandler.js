@@ -28,9 +28,11 @@ loginBtn.addEventListener("click", () => {
     .then((data) => {
       if (data == 200) {
         window.location.replace("dashboard.html");
-      } else {
+      } else if (data == "no-match") {
         document.getElementById("error").innerText =
-          "User doesn't exist! Try again.";
+          "Username or password is incorrect!";
+      } else if (data == 404) {
+        document.getElementById("error").innerText = "User does not exist!";
       }
     });
 

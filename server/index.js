@@ -64,8 +64,8 @@ app.route("/register").post((req, res) => {
     { $or: [{ email: req.body.email }, { username: req.body.username }] },
     (err, result) => {
       if (result.length !== 0) {
-        res.send("1");
-        return;
+        //user already exists
+        return res.send("1");
       } else {
         //if it doesn't exist, add a new user to the database
         const password = req.body.password;
@@ -89,8 +89,8 @@ app.route("/register").post((req, res) => {
             }
           });
         });
-        res.send("0");
-        res.end();
+        //user was created
+        return res.send("0");
       }
     }
   );
@@ -115,7 +115,7 @@ app.route("/login").post((req, res) => {
           //if the passwords match, log the user in, else show an error
           if (match !== true) {
             //show error
-            console.log("Username or password is incorrect!");
+            return res.send("no-match");
           } else {
             //log the user in - *send them to their dashboard with their information
             req.session.username = result[0].username;
@@ -125,8 +125,7 @@ app.route("/login").post((req, res) => {
         });
       } else if (result.length == 0) {
         //the user does not exist in the database at all
-        res.send("404");
-        return;
+        return res.send("404");
       }
     }
   );
