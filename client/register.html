@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Login System</title>
+  </head>
+  <body>
+    <div class="container">
+      <form class="register-form">
+        <input
+          type="email"
+          class="reg-login-input"
+          id="email-reg"
+          placeholder="Email"
+        />
+        <input
+          type="text"
+          class="reg-login-input"
+          id="username-reg"
+          placeholder="Username"
+        />
+        <input
+          type="password"
+          class="reg-login-input"
+          id="password-reg"
+          placeholder="Password"
+        />
+        <input
+          type="password"
+          class="reg-login-input"
+          id="password-reg-rep"
+          placeholder="Repeat Password"
+        />
+      </form>
+      <div class="login-btns">
+        <button class="form-btn" id="submit">Submit</button>
+        <a href="index.html"
+          ><button class="form-btn" id="go-to-login">Back To Login</button></a
+        >
+      </div>
+    </div>
+
+    <script src="../js/registerHandler.js"></script>
+  </body>
+</html>
