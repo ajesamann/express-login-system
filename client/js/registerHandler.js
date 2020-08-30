@@ -20,9 +20,19 @@ registerBtn.addEventListener("click", () => {
   }
 
   if (!email || !username || !password || !passwordRepeat) {
-    console.log("EMPTY");
+    document.getElementById("error2").innerText = "Fill in all fields!";
     resetInputs();
     return;
+  } else {
+    document.getElementById("error2").innerText = "User created!";
+  }
+
+  if (password !== passwordRepeat) {
+    document.getElementById("error2").innerText = "Passwords don't match!";
+    resetInputs();
+    return;
+  } else {
+    document.getElementById("error2").innerText = "User created!";
   }
 
   const data = {
@@ -39,7 +49,16 @@ registerBtn.addEventListener("click", () => {
     headers: {
       "Content-Type": "application/json",
     },
-  });
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      if (data == 1) {
+        document.getElementById("error2").innerText =
+          "Username or email already in use!";
+      }
+    });
 
   resetInputs();
 });

@@ -29,7 +29,8 @@ loginBtn.addEventListener("click", () => {
       if (data == 200) {
         window.location.replace("dashboard.html");
       } else {
-        console.log("User not found!");
+        document.getElementById("error").innerText =
+          "User doesn't exist! Try again.";
       }
     });
 

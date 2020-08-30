@@ -64,8 +64,7 @@ app.route("/register").post((req, res) => {
     { $or: [{ email: req.body.email }, { username: req.body.username }] },
     (err, result) => {
       if (result.length !== 0) {
-        console.log("Username or email already taken!");
-        res.end();
+        res.send("1");
         return;
       } else {
         //if it doesn't exist, add a new user to the database
@@ -90,7 +89,6 @@ app.route("/register").post((req, res) => {
             }
           });
         });
-
         res.end();
       }
     }
@@ -126,7 +124,6 @@ app.route("/login").post((req, res) => {
         });
       } else if (result.length == 0) {
         //the user does not exist in the database at all
-        console.log("User doesn't exist!");
         res.send("404");
         return;
       }
