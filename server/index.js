@@ -89,6 +89,7 @@ app.route("/register").post((req, res) => {
             }
           });
         });
+        res.send("0");
         res.end();
       }
     }

@@ -23,16 +23,12 @@ registerBtn.addEventListener("click", () => {
     document.getElementById("error2").innerText = "Fill in all fields!";
     resetInputs();
     return;
-  } else {
-    document.getElementById("error2").innerText = "User created!";
   }
 
   if (password !== passwordRepeat) {
     document.getElementById("error2").innerText = "Passwords don't match!";
     resetInputs();
     return;
-  } else {
-    document.getElementById("error2").innerText = "User created!";
   }
 
   const data = {
@@ -57,7 +53,10 @@ registerBtn.addEventListener("click", () => {
       if (data == 1) {
         document.getElementById("error2").innerText =
           "Username or email already in use!";
+      } else {
+        document.getElementById("error2").innerText = "User created!";
       }
+      return;
     });
 
   resetInputs();
