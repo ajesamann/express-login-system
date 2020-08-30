@@ -151,7 +151,6 @@ app.route("/dashboard").get((req, res) => {
 });
 
 //turning the server on basically
-const PORT = 3000;
-app.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}`);
+app.listen(process.env.PORT || 3000, () => {
+  console.log(`Listening on some port`);
 });
