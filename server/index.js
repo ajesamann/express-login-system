@@ -115,7 +115,7 @@ app.route("/login").post((req, res) => {
           //if the passwords match, log the user in, else show an error
           if (match !== true) {
             //show error
-            return res.send("no-match");
+            return res.send("700");
           } else {
             //log the user in - *send them to their dashboard with their information
             req.session.username = result[0].username;

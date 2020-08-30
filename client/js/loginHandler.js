@@ -28,7 +28,7 @@ loginBtn.addEventListener("click", () => {
     .then((data) => {
       if (data == 200) {
         window.location.replace("dashboard.html");
-      } else if (data == "no-match") {
+      } else if (data == 700) {
         document.getElementById("error").innerText =
           "Username or password is incorrect!";
       } else if (data == 404) {

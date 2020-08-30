@@ -37,7 +37,7 @@ registerBtn.addEventListener("click", () => {
     password,
   };
 
-  const URL = "http://localhost:3000/register";
+  const URL = "/register";
 
   fetch(URL, {
     method: "POST",
