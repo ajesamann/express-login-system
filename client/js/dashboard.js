@@ -1,5 +1,4 @@
 const URL = "/dashboard";
-const URL2 = "/logout";
 
 fetch(URL)
   .then((response) => response.json())
@@ -11,5 +10,3 @@ fetch(URL)
       document.getElementById("db-email").innerText = data.email;
     }
   });
-
-fetch(URL2);
